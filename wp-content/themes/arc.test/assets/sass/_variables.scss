@@ -1,7 +1,7 @@
 //  Цвет
 
-$body-bg: #fff;
-$text-color: #333;
+$bg-color: #fff;
+$text-color: #000;
 
 // Цвет ссылки
 
@@ -10,7 +10,9 @@ $link-color--hover: darken($link-color, 20%);
 
 //  Типографика
 
-$font-family: 'Roboto', Helvetica, Arial, sans-serif;
+$font-family: 'Open Sans', Arial, sans-serif;
+$font-family--montserrat: 'Montserrat';
+$font-family--openSans: 'Open Sans';
 // $font-family--helvetica: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 $font-size: 14px;

@@ -82,7 +82,8 @@ function theme_scripts() {
 	wp_enqueue_style( 'theme-main-style', get_template_directory_uri() . '/assets/dist/main.css' );
 	wp_enqueue_style( 'theme-custom-style', get_template_directory_uri() . '/assets/css/custom.css' );
   // Scripts
-	wp_enqueue_script( 'theme-script', get_template_directory_uri() . '/assets/scripts/main.js', array('jquery'), false, true );
+  wp_enqueue_script( 'theme-script', get_template_directory_uri() . '/assets/scripts/main.js', array('jquery'), false, true );
+	wp_enqueue_script( 'font-awesome-script', get_template_directory_uri() . '/assets/scripts/all.min.js', array('jquery'), false, true );
 }
 add_action( 'wp_enqueue_scripts', 'theme_scripts' );
 
@@ -96,3 +97,18 @@ require get_template_directory() . '/include/customizer.php';
  * Create custom post types.
  */
 require get_template_directory() . '/include/custom-post-type.php';
+
+/**
+ * Create Options Page with ACF
+ */
+
+if( function_exists('acf_add_options_page') ) {
+
+	acf_add_options_page(array(
+		'page_title' 	=> 'Theme General Settings',
+		'menu_title'	=> 'Theme Settings',
+		'menu_slug' 	=> 'theme-general-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+}
